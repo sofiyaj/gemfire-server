@@ -1,8 +1,8 @@
 package com.jc.dao;
 
-import com.jc.domain.Customer;
 import org.apache.geode.cache.GemFireCache;
 import org.apache.geode.cache.Region;
+import org.gj.demo.domain.Customer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.gemfire.PartitionedRegionFactoryBean;
 import org.springframework.data.gemfire.config.annotation.CacheServerApplication;
@@ -20,21 +20,9 @@ import java.util.concurrent.atomic.AtomicLong;
  * @Date: Created in 14:48 2018/1/11
  */
 @Component
-@CacheServerApplication(name = "GemFireContinuousQueryServer")
 public class DataImport {
-    @Bean(name = "Customers")
-    PartitionedRegionFactoryBean<Long, Customer> customersRegion(GemFireCache gemfireCache) {
-        PartitionedRegionFactoryBean<Long, Customer> customers = new PartitionedRegionFactoryBean<>();
-        customers.setCache(gemfireCache);
-        customers.setClose(false);
-        customers.setPersistent(false);
-        return customers;
-    }
     @Resource(name = "Customers")
     private Region<Long, Customer> customers;
-    private Random random = new Random(System.currentTimeMillis());
-
-
     private static final AtomicLong id = new AtomicLong(0L);
      public static final List<Customer> customerList = new ArrayList<>();
     private static final Customer jonDoe = newCustomer(1,"Jon", "Doe");
