@@ -16,22 +16,21 @@ public class AppService {
 	@Autowired
 	DataImport dataImport;
     public Customer findCustomer(int index) {
-        return findCustomer(index);
+        return dataImport.findCustomer(index);
     }
 
 
     public Customer findCustomerById(Long id) {
-        return findCustomerById(id);
+        return dataImport.findCustomerById(id);
     }
 
     public Customer save(Customer customer) {
-        return save(customer);
+        return dataImport.save(customer);
 
     }
 
     public Customer addCustomer(long id, String firstName, String lastName) {
         Customer customer = new Customer(id, firstName, lastName);
-        DataImport.customerList.add(customer);
-        return customer;
+        return dataImport.addCustomer(id, firstName, lastName);
     }
 }

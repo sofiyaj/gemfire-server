@@ -40,19 +40,20 @@ public class DataImport {
         return customer;
     }
 
-    public static Customer findCustomer(int index) {
+
+    public Customer findCustomer(int index) {
         return customerList.get(index);
     }
-    public static Customer findCustomerById(Long id) {
+    public Customer findCustomerById(Long id) {
         return customerList.stream().filter(customer -> customer.getId().equals(id)).findAny().orElse(null);
     }
-    private Customer save(Customer customer) {
+    public Customer save(Customer customer) {
         this.customers.put(customer.getId(), customer);
         return customer;
     }
     public Customer addCustomer(long id,String firstName, String lastName){
         Customer customer = new Customer(id, firstName, lastName);
-        customerList.add(customer);
+        this.customers.put(customer.getId(), customer);
         return customer;
     }
 
