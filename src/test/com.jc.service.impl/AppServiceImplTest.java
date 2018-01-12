@@ -1,5 +1,6 @@
 package com.jc.service.impl;
 
+import com.jc.service.AppService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

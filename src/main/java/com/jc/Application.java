@@ -1,7 +1,7 @@
 package com.jc;
 
-import org.apache.geode.cache.GemFireCache;
 import org.gj.demo.domain.Customer;
+import org.apache.geode.cache.GemFireCache;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
