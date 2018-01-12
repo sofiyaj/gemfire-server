@@ -1,9 +1,10 @@
-package com.jc.service.impl;
+package com.jc.service;
 
-import com.jc.dao.DataImport;
-import com.jc.domain.Customer;
+import org.gj.demo.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.jc.dao.DataImport;
 
 /**
  * @Author: wangjie
@@ -12,9 +13,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AppService {
-    @Autowired
-    DataImport dataImport;
-
+	@Autowired
+	DataImport dataImport;
     public Customer findCustomer(int index) {
         return findCustomer(index);
     }
