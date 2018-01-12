@@ -1,0 +1,31 @@
+package com.jc.controller;
+
+import com.jc.domain.Customer;
+import com.jc.service.impl.AppService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+
+/**
+ * @Author: wangjie
+ * @Description:
+ * @Date: Created in 19:07 2018/1/8
+ */
+@RestController
+@RequestMapping("/geode")
+@CrossOrigin
+public class AppController {
+    @Autowired
+    AppService appService;
+
+    @RequestMapping("/add")
+    @ResponseBody
+    public Customer addCustomer(long id, String firstName, String lastName){
+        return  appService.addCustomer(89, "wang", "jie");
+    }
+
+
+}
