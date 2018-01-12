@@ -36,7 +36,7 @@ public class DataImport {
 
 
     private static final AtomicLong id = new AtomicLong(0L);
-     public static final List<Customer> customerList = new ArrayList<>();
+    public static final List<Customer> customerList = new ArrayList<>();
     private static final Customer jonDoe = newCustomer(1,"Jon", "Doe");
     private static final Customer janeDoe = newCustomer(2,"Jane", "Doe");
     private static final Customer cookieDoe = newCustomer(3,"Cookie", "Doe");
@@ -52,10 +52,10 @@ public class DataImport {
         return customer;
     }
 
-    private static Customer findCustomer(int index) {
+    public static Customer findCustomer(int index) {
         return customerList.get(index);
     }
-    private static Customer findCustomerById(Long id) {
+    public static Customer findCustomerById(Long id) {
         return customerList.stream().filter(customer -> customer.getId().equals(id)).findAny().orElse(null);
     }
     private Customer save(Customer customer) {

@@ -29,9 +29,9 @@ public class AppService {
 
     }
 
-
     public Customer addCustomer(long id, String firstName, String lastName) {
         Customer customer = new Customer(id, firstName, lastName);
+        DataImport.customerList.add(customer);
         return customer;
     }
 }
