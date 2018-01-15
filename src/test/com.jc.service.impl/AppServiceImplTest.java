@@ -19,7 +19,7 @@ public class AppServiceImplTest {
     AppService appService;
     @Test
     public void addCustomer(){
-        appService.addCustomer(89,"wang","jie");
+        appService.addCustomer(89,"wang","jie",25);
     }
 
 

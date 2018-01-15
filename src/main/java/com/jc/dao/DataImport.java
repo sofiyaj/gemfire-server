@@ -25,17 +25,17 @@ public class DataImport {
     private Region<Long, Customer> customers;
     private static final AtomicLong id = new AtomicLong(0L);
     public static final List<Customer> customerList = new ArrayList<>();
-    private static final Customer jonDoe = newCustomer(1,"Jon", "Doe");
-    private static final Customer janeDoe = newCustomer(2,"Jane", "Doe");
-    private static final Customer cookieDoe = newCustomer(3,"Cookie", "Doe");
-    private static final Customer froDoe = newCustomer(4,"Fro", "Doe");
-    private static final Customer hoDoe = newCustomer(5,"Ho", "Doe");
-    private static final Customer lanDoe = newCustomer(7,"Lan", "Doe");
-    private static final Customer pieDoe = newCustomer(11,"Pie", "Doe");
-    private static final Customer sourDoe = newCustomer(23,"Sour", "Doe");
-    private static final Customer jackHandy = newCustomer(232,"Jack", "Handy");
-    public static Customer newCustomer(long id,String firstName, String lastName) {
-        Customer customer = new Customer(id, firstName, lastName);
+    private static final Customer jonDoe = newCustomer(1,"Jon", "Doe",11);
+    private static final Customer janeDoe = newCustomer(2,"Jane", "Doe",22);
+    private static final Customer cookieDoe = newCustomer(3,"Cookie", "Doe",33);
+    private static final Customer froDoe = newCustomer(4,"Fro", "Doe",44);
+    private static final Customer hoDoe = newCustomer(5,"Ho", "Doe",55);
+    private static final Customer lanDoe = newCustomer(7,"Lan", "Doe",66);
+    private static final Customer pieDoe = newCustomer(11,"Pie", "Doe",77);
+    private static final Customer sourDoe = newCustomer(23,"Sour", "Doe",88);
+    private static final Customer jackHandy = newCustomer(232,"Jack", "Handy",99);
+    public static Customer newCustomer(long id,String firstName, String lastName,int age) {
+        Customer customer = new Customer(id, firstName, lastName,age);
         customerList.add(customer);
         return customer;
     }
@@ -51,8 +51,8 @@ public class DataImport {
         this.customers.put(customer.getId(), customer);
         return customer;
     }
-    public Customer addCustomer(long id,String firstName, String lastName){
-        Customer customer = new Customer(id, firstName, lastName);
+    public Customer addCustomer(long id,String firstName, String lastName,int age){
+        Customer customer = new Customer(id, firstName, lastName,age);
         this.customers.put(customer.getId(), customer);
         return customer;
     }

@@ -24,8 +24,8 @@ public class AppController {
 
     @RequestMapping("/add")
     @ResponseBody
-    public Customer addCustomer(long id, String firstName, String lastName){
-        return  appService.addCustomer(id, "wang", "jie");
+    public Customer addCustomer(long id, String firstName, String lastName,int age){
+        return  appService.addCustomer(id, "wang", "jie",age);
     }
 
 

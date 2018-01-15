@@ -18,19 +18,14 @@ public class AppService {
     public Customer findCustomer(int index) {
         return dataImport.findCustomer(index);
     }
-
-
     public Customer findCustomerById(Long id) {
         return dataImport.findCustomerById(id);
     }
-
     public Customer save(Customer customer) {
         return dataImport.save(customer);
-
     }
-
-    public Customer addCustomer(long id, String firstName, String lastName) {
-        Customer customer = new Customer(id, firstName, lastName);
-        return dataImport.addCustomer(id, firstName, lastName);
+    public Customer addCustomer(long id, String firstName, String lastName,int age) {
+        Customer customer = new Customer(id, firstName, lastName, age);
+        return dataImport.addCustomer(id, firstName, lastName,age);
     }
 }
